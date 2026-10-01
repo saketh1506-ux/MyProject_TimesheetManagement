@@ -1,68 +1,94 @@
-Timesheet Management and Project Budget Monitoring System
+# Timesheet Management and Project Budget Monitoring System
 
-Student Name: Saketh Narayanam
-SRN: PES1UG24CS292
-Project Overview
-The Timesheet Management and Project Budget Monitoring System is an individual software engineering project focused on managing the working hours of remote developers and the review of their submitted timesheets.
-The system provides a structured workflow where a remote developer can log time and submit a timesheet. The submitted timesheet can then be validated and reviewed by an engineering manager, who can approve or reject it.
-The system also supports project budget monitoring by calculating project budget consumption and allowing the engineering manager to view budget burn information.
-The current system model includes the following actors:
-- Remote Developer
-- Engineering Manager
-- Jira System
-Problem Statement
-Managing timesheets for remote developers can become difficult when working hours are recorded and reviewed manually.
-A manual process can create problems such as:
-- Difficulty in recording working hours consistently.
-- Delays in submitting and reviewing timesheets.
-- Errors in submitted time information.
-- Difficulty in validating timesheets.
-- Difficulty in tracking approved and rejected timesheets.
-- Extra effort for managers while reviewing timesheets.
-- Difficulty in calculating project budget consumption.
-- Difficulty in monitoring project budget burn.
-This project aims to provide a structured and simple workflow for time logging, timesheet submission, validation, review, approval, rejection, and project budget monitoring.
-Objectives
-The main objectives of the project are:
-1. Allow remote developers to record their working hours.
-2. Allow developers to submit timesheets.
-3. Validate submitted timesheets before review.
-4. Allow engineering managers to review submitted timesheets.
-5. Allow engineering managers to approve timesheets.
-6. Allow engineering managers to reject timesheets.
-7. Calculate project budget consumption.
-8. Provide a way to view project budget burn.
-9. Maintain a clear and simple workflow for timesheet management.
-10. Maintain accurate and consistent timesheet information.
-Main Actors
-Remote Developer
-The Remote Developer is responsible for recording work time and submitting timesheets.
-Main activities:
-- Log Time
-- Submit Timesheet
-Engineering Manager
-The Engineering Manager reviews submitted timesheets and handles approval or rejection.
-Main activities:
-- Review Timesheet
-- Approve Timesheet
-- Reject Timesheet
-- View Budget Burn
-Jira System
-The Jira System is represented as an external system in the use-case model and is associated with the time-logging workflow.
-Main Use Cases
-Use Case	Description
-Log Time	Record the time spent on project work.
-Submit Timesheet	Submit recorded working hours for review.
-Validate Timesheet	Check whether the submitted timesheet is valid.
-Review Timesheet	Allow the engineering manager to examine the submitted timesheet.
-Approve Timesheet	Approve a timesheet after review.
-Reject Timesheet	Reject a timesheet when it does not satisfy the required conditions.
-Calculate Project Budget Consumption	Calculate the amount of project budget consumed.
-View Budget Burn	Display the current project budget consumption or burn information.
+**Student:** Saketh Narayanam
+**SRN:** PES1UG24CS292
 
+An individual software engineering project for managing remote developers' working hours, reviewing submitted timesheets, and monitoring project budget burn.
 
-System Workflow
-The main timesheet workflow is:
+---
+
+## Table of Contents
+
+- [Project Overview](#project-overview)
+- [Problem Statement](#problem-statement)
+- [Objectives](#objectives)
+- [Actors](#actors)
+- [Use Cases](#use-cases)
+- [System Workflow](#system-workflow)
+- [Requirements Engineering](#requirements-engineering)
+- [Architecture and Design](#architecture-and-design)
+- [Software Requirements Specification](#software-requirements-specification)
+- [Work Breakdown Structure](#work-breakdown-structure)
+- [Project Creation and Management Evidence](#project-creation-and-management-evidence)
+- [GitHub Copilot](#github-copilot)
+- [Software Testing Tools and Bug Fixing](#software-testing-tools-and-bug-fixing)
+- [Testing](#testing)
+- [Scope](#scope)
+- [Repository Structure](#repository-structure)
+- [Tools and Technologies](#tools-and-technologies)
+- [Project Status](#project-status)
+- [Conclusion](#conclusion)
+
+---
+
+## Project Overview
+
+A remote developer logs time and submits a timesheet. An engineering manager validates and reviews it, then approves or rejects it. The system also calculates project budget consumption and lets the engineering manager view budget burn.
+
+## Problem Statement
+
+Managing timesheets for remote developers is difficult when hours are recorded and reviewed manually. Common problems:
+
+- Inconsistent recording of working hours
+- Delays in submitting and reviewing timesheets
+- Errors in submitted time information
+- Difficulty validating timesheets
+- Difficulty tracking approved and rejected timesheets
+- Extra effort for managers during review
+- Difficulty calculating project budget consumption
+- Difficulty monitoring project budget burn
+
+This project provides a structured, simple workflow for time logging, submission, validation, review, approval, rejection, and budget monitoring.
+
+## Objectives
+
+1. Allow remote developers to record their working hours
+2. Allow developers to submit timesheets
+3. Validate submitted timesheets before review
+4. Allow engineering managers to review submitted timesheets
+5. Allow engineering managers to approve timesheets
+6. Allow engineering managers to reject timesheets
+7. Calculate project budget consumption
+8. Provide a way to view project budget burn
+9. Maintain a clear and simple workflow for timesheet management
+10. Maintain accurate and consistent timesheet information
+
+## Actors
+
+| Actor | Role | Main Activities |
+|---|---|---|
+| **Remote Developer** | Records work time and submits timesheets | Log Time, Submit Timesheet |
+| **Engineering Manager** | Reviews submitted timesheets and handles approval or rejection | Review, Approve, Reject, View Budget Burn |
+| **Jira System** | External system associated with the time-logging workflow | - |
+
+## Use Cases
+
+| Use Case | Description |
+|---|---|
+| Log Time | Record the time spent on project work |
+| Submit Timesheet | Submit recorded working hours for review |
+| Validate Timesheet | Check whether the submitted timesheet is valid |
+| Review Timesheet | Allow the engineering manager to examine the submitted timesheet |
+| Approve Timesheet | Approve a timesheet after review |
+| Reject Timesheet | Reject a timesheet that does not satisfy the required conditions |
+| Calculate Project Budget Consumption | Calculate the amount of project budget consumed |
+| View Budget Burn | Display current project budget consumption or burn information |
+
+## System Workflow
+
+**Timesheet workflow**
+
+~~~text
 Remote Developer
        |
        v
@@ -80,8 +106,11 @@ Review Timesheet
      /   \
     v     v
 Approve  Reject
+~~~
 
-The budget monitoring workflow is:
+**Budget monitoring workflow**
+
+~~~text
 Project Data
       |
       v
@@ -89,11 +118,12 @@ Calculate Project Budget Consumption
       |
       v
 View Budget Burn
+~~~
 
-Requirements Engineering
-Functional Requirements
-The Functional Requirements define what the system should do.
-The main functional requirements include:
+## Requirements Engineering
+
+### Functional Requirements
+
 - The system shall allow a remote developer to log working time.
 - The system shall allow a remote developer to submit a timesheet.
 - The system shall validate submitted timesheet information.
@@ -102,32 +132,24 @@ The main functional requirements include:
 - The system shall allow an engineering manager to reject a timesheet.
 - The system shall calculate project budget consumption.
 - The system shall allow the engineering manager to view budget burn information.
-Non-Functional Requirements
-The Non-Functional Requirements define how the system should perform.
-The project considers:
-- Performance
-- Security
-- Usability
-- Reliability
-- Maintainability
-Examples include:
+
+### Non-Functional Requirements
+
+Categories considered: Performance, Security, Usability, Reliability, Maintainability.
+
 - The system should respond to normal requests within the defined response time.
 - Protected functions should only be accessible to authorized users.
 - Timesheet information should be stored securely.
 - The interface should be simple and easy to use.
 - Timesheet and budget information should remain consistent.
-Requirements Traceability Matrix
-The Requirements Traceability Matrix connects requirements with their corresponding use cases and test cases.
-The basic relationship is:
-Requirement
-     |
-     v
-  Use Case
-     |
-     v
- Test Case
 
-Example:
+### Requirements Traceability Matrix
+
+The RTM links requirements to use cases and test cases.
+
+~~~text
+Requirement -> Use Case -> Test Case
+
 FR - Submit Timesheet
         |
         v
@@ -135,11 +157,16 @@ UC - Submit Timesheet
         |
         v
 TC - Submit Timesheet Successfully
+~~~
 
-The complete RTM is maintained in the 01_RE folder.
-Architecture and Design
-The architecture section explains how the system is organized and how the main parts communicate.
-The architecture documentation includes:
+The complete RTM is in the `01_RE` folder.
+
+## Architecture and Design
+
+The system is organized into separate layers for the user interface, application logic, and data management, to keep it easy to understand, develop, test, and maintain.
+
+Documentation includes:
+
 - Architecture Diagram
 - Architecture Pattern
 - Component Diagram
@@ -147,24 +174,14 @@ The architecture documentation includes:
 - Sequence Diagrams
 - API Design
 - Error Handling Design
-The system is planned using separate layers for the user interface, application logic, and data management so that the project remains easier to understand, develop, test, and maintain.
-Software Requirements Specification
-The SRS describes the expected behavior and requirements of the system.
-The SRS contains:
-- Introduction
-- Problem Statement
-- Objectives
-- Scope
-- Actors
-- Functional Requirements
-- Non-Functional Requirements
-- Security Requirements
-- Use Cases
-- Constraints
-- Assumptions
-The SRS is maintained in the 04_SRS_WBS folder.
-Work Breakdown Structure
-The Work Breakdown Structure divides the project into smaller activities.
+
+## Software Requirements Specification
+
+The SRS (in `04_SRS_WBS`) contains: Introduction, Problem Statement, Objectives, Scope, Actors, Functional Requirements, Non-Functional Requirements, Security Requirements, Use Cases, Constraints, and Assumptions.
+
+## Work Breakdown Structure
+
+~~~text
 Timesheet Management and Project Budget Monitoring System
 │
 ├── 1. Requirements
@@ -197,99 +214,72 @@ Timesheet Management and Project Budget Monitoring System
 └── 5. Deployment
     ├── Environment Setup
     └── Deployment
+~~~
 
-The detailed WBS is maintained in the 04_SRS_WBS folder.
-Project Creation and Management Evidence
-The repository will contain evidence showing how the project was created and managed.
-GitHub Evidence
-The GitHub section should contain screenshots showing relevant project activity such as:
-- Repository creation
-- Repository structure
-- Commits
-- Branches, if used
-- Project activity
-Jira Evidence
-The Jira section should contain screenshots showing:
-- Jira project
-- Backlog
-- Scrum board
-- Sprint
-- Tasks or issues
-- Task status
-These screenshots are maintained in the 03_Project_Creation folder.
-GitHub Copilot
-GitHub Copilot is included as part of the project development evidence.
-The Copilot section should contain:
-- Screenshots of GitHub Copilot being used.
-- Evidence of generated or suggested project code.
-- Evidence of reviewing or modifying the generated code.
-- Repository or project link related to the work.
-The purpose of this section is to show the use of AI-assisted coding during development.
-These materials are maintained in the 05_GitHub_Copilot folder.
-Software Testing Tools and Bug Fixing
-The project includes a software testing activity that demonstrates the complete bug-fixing process.
-The process is:
-Bug Found
-    |
-    v
-Test Fails
-    |
-    v
-AI / Copilot Assistance
-    |
-    v
-Code Fix / Patch
-    |
-    v
-Retest
-    |
-    v
-Test Passes
+The detailed WBS is in `04_SRS_WBS`.
 
-The testing-tools folder should contain evidence for:
-1. The bug before fixing.
-2. The failing test or incorrect behavior.
-3. AI/Copilot assistance used for the fix.
-4. The code patch or corrected implementation.
-5. Retesting after the fix.
-6. The final test result.
-The related evidence is maintained in the 06_Software_Testing_Tools folder.
-Testing
+## Project Creation and Management Evidence
+
+Screenshots are kept in `03_Project_Creation`.
+
+**GitHub:** repository creation, repository structure, commits, branches (if used), project activity.
+
+**Jira:** Jira project, backlog, scrum board, sprint, tasks/issues, task status.
+
+## GitHub Copilot
+
+Included as evidence of AI-assisted development (folder `05_GitHub_Copilot`):
+
+- Screenshots of Copilot in use
+- Generated or suggested project code
+- Evidence of reviewing or modifying the generated code
+- Repository or project link related to the work
+
+## Software Testing Tools and Bug Fixing
+
+Demonstrates the full bug-fixing process:
+
+~~~text
+Bug Found -> Test Fails -> AI / Copilot Assistance -> Code Fix / Patch -> Retest -> Test Passes
+~~~
+
+The `06_Software_Testing_Tools` folder holds evidence of:
+
+1. The bug before fixing
+2. The failing test or incorrect behavior
+3. AI/Copilot assistance used for the fix
+4. The code patch or corrected implementation
+5. Retesting after the fix
+6. The final test result
+
+## Testing
+
 Testing is based on the system requirements.
-Functional Testing
-Functional testing covers:
-- Logging time
-- Submitting timesheets
-- Validating timesheets
-- Reviewing timesheets
-- Approving timesheets
-- Rejecting timesheets
-- Calculating budget consumption
-- Viewing budget burn
-Non-Functional Testing
-The project also considers:
-- Performance
-- Security
-- Usability
-- Reliability
-- Maintainability
-Bug Fixing and Retesting
-A selected defect is tested before and after the fix to demonstrate the complete process from bug identification to successful retesting.
-Scope
-In Scope
+
+**Functional testing:** logging time, submitting, validating, reviewing, approving and rejecting timesheets, calculating budget consumption, viewing budget burn.
+
+**Non-functional testing:** performance, security, usability, reliability, maintainability.
+
+**Bug fixing and retesting:** a selected defect is tested before and after the fix, from identification through successful retesting.
+
+## Scope
+
+**In scope**
+
 - Time logging
-- Timesheet submission
-- Timesheet validation
-- Timesheet review
-- Timesheet approval
-- Timesheet rejection
+- Timesheet submission, validation, review, approval, and rejection
 - Project budget consumption calculation
 - Budget burn viewing
-External System
+
+**External system**
+
 - Jira System
-Additional features, if implemented later, will be documented in the SRS and related design documents.
-Repository Structure
-The individual project repository follows the required structure.
+
+Any features added later will be documented in the SRS and related design documents.
+
+## Repository Structure
+
+~~~text
 MyProject_ShortName/
 │
 ├── README.md
@@ -320,33 +310,20 @@ MyProject_ShortName/
     ├── Patch/
     ├── Retest/
     └── README.md
+~~~
 
-Tools and Technologies
-The project may use software engineering and development tools such as:
-- GitHub
-- GitHub Copilot
+## Tools and Technologies
+
+- GitHub, GitHub Copilot, Git
 - Jira
-- Git
-- Frontend technologies
-- Backend technologies
-- Database technologies
-The final technology list will be updated according to the actual implementation.
-Project Status
-The project is currently being developed and documented as an individual Software Engineering project.
-The repository is being maintained with the required:
-- Requirements documentation
-- Architecture and design
-- SRS
-- Work Breakdown Structure
-- GitHub and Jira evidence
-- GitHub Copilot evidence
-- Software testing evidence
-- Bug-fixing and retesting evidence
-The repository will be updated as development and testing progress.
-Student Details
-Name: Saketh Narayanam
-SRN: PES1UG24CS292
-Conclusion
-The Timesheet Management and Project Budget Monitoring System is designed to provide a structured workflow for recording working hours, submitting and validating timesheets, reviewing them, and handling approval or rejection.
-The project also supports project budget monitoring through budget consumption calculation and budget burn viewing.
-The individual repository is organized to contain the required Requirements Engineering, Architectural Diagram, Project Creation evidence, SRS and Work Breakdown Structure, GitHub Copilot evidence, and Software Testing Tools activities.
+- Frontend, backend, and database technologies
+
+The final technology list will be updated to match the actual implementation.
+
+## Project Status
+
+Currently being developed and documented as an individual Software Engineering project. The repository is maintained with requirements documentation, architecture and design, SRS, WBS, GitHub and Jira evidence, Copilot evidence, and software testing, bug-fixing, and retesting evidence. It will be updated as development and testing progress.
+
+## Conclusion
+
+The system provides a structured workflow for recording working hours, submitting and validating timesheets, and handling approval or rejection, along with project budget monitoring through consumption calculation and budget burn viewing. The repository is organized to hold the required Requirements Engineering, Architectural Diagram, Project Creation evidence, SRS and WBS, GitHub Copilot evidence, and Software Testing Tools activities.
